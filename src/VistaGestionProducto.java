@@ -21,6 +21,13 @@ public class VistaGestionProducto extends javax.swing.JFrame {
         armarCabecera();
     }
     public void armarCabecera(){
+        modelo = new DefaultTableModel() {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false; 
+        }
+        };
+    
     modelo.addColumn("Nombre");
     modelo.addColumn("Categoria");
     modelo.addColumn("Precio");
@@ -195,7 +202,8 @@ public class VistaGestionProducto extends javax.swing.JFrame {
         
     } catch (NumberFormatException e) {
         javax.swing.JOptionPane.showMessageDialog(this, " El precio debe ser un numero valido (ej: 1500.50).");
-    }
+        jTprecio.requestFocus();
+      }
 
     }//GEN-LAST:event_jBagregarActionPerformed
 
