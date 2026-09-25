@@ -1,38 +1,45 @@
 
-public class Producto {
-    private String nombre;
-    private String categoria;
+public class Producto implements Comparable<Producto> {
+    private int codigo;
+    private String descripcion;
     private double precio;
+    private int stock;
+    private String rubro; // Representa la Categoría / Rubro del producto
 
-    public Producto(String nombre, String categoria, double precio) {
-        this.nombre = nombre;
-        this.categoria = categoria;
+    // Constructor para el Ejercicio 1 (recibe Categoria como rubro)
+    public Producto(String descripcion, String categoria, double precio) {
+        this.codigo = 0;
+        this.descripcion = descripcion;
         this.precio = precio;
+        this.stock = 0;
+        this.rubro = categoria; // Guarda la categoría en el atributo rubro
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
+    // Constructor completo para el Ejercicio 2
+    public Producto(int codigo, String descripcion, double precio, int stock, String rubro) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
         this.precio = precio;
+        this.stock = stock;
+        this.rubro = rubro;
     }
+
+    // Getters y Setters
+    public String getDescripcion() { return descripcion; }
+    public String getRubro() { return rubro; }
+    public double getPrecio() { return precio; }
+    public int getCodigo() { return codigo; }
+    public int getStock() { return stock; }
     
-    
+    // Setters
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+    public void setPrecio(double precio) { this.precio = precio; }
+    public void setStock(int stock) { this.stock = stock; }
+    public void setRubro(String rubro) { this.rubro = rubro; }
+    public void setCodigo(int codigo) { this.codigo = codigo; }
+
+    @Override
+    public int compareTo(Producto o) {
+        return Integer.compare(this.codigo, o.codigo);
+    }
 }

@@ -1,3 +1,6 @@
+
+import java.util.TreeSet;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -11,6 +14,7 @@ public class MenuGeneral extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MenuGeneral.class.getName());
 
+    public static TreeSet<Producto> listaProductos = new TreeSet<>();
     /**
      * Creates new form MenuGeneral
      */
@@ -97,7 +101,12 @@ public class MenuGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMgestProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMgestProductActionPerformed
-        // TODO add your handling code here:
+        jDPescritorio.removeAll();
+        jDPescritorio.repaint();
+        VistaProductos vp = new VistaProductos();
+        vp.setVisible(true);
+        jDPescritorio.add(vp);
+        jDPescritorio.moveToFront(vp);
     }//GEN-LAST:event_jMgestProductActionPerformed
 
     /**

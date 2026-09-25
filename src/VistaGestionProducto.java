@@ -213,7 +213,8 @@ public class VistaGestionProducto extends javax.swing.JFrame {
     try {
         double precio = Double.parseDouble(precioTexto);
         Producto p = new Producto(nombre, categoria, precio);
-        modelo.addRow(new Object[]{p.getNombre(), p.getCategoria(), p.getPrecio()});
+        modelo.addRow(new Object[]{p.getDescripcion(), p.getRubro(), p.getPrecio()});
+        
         jTnombre.setText("");
         jTprecio.setText("");
         
