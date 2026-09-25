@@ -36,6 +36,8 @@ public class ConsultaPorNombre extends javax.swing.JInternalFrame {
         tableConsultaPorDescripcion = new javax.swing.JTable();
 
         setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         lbTitulo.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lbTitulo.setText("Consulta por Nombre");
@@ -114,7 +116,7 @@ public class ConsultaPorNombre extends javax.swing.JInternalFrame {
             modelo.setRowCount(0);
             for(Producto p: MenuGeneral.listaProductos){
                 String cadena = p.getDescripcion().toLowerCase();
-                if(cadena.startsWith(txtDescripcion.getText().toLowerCase())){
+                if(cadena.contains(txtDescripcion.getText().toLowerCase())){
                     modelo.addRow(new Object[]{
                         p.getCodigo(),
                         p.getDescripcion(),
