@@ -93,7 +93,11 @@ public class MenuGeneral extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMconsultaActionPerformed
-        // TODO add your handling code here:
+        jDPescritorio.removeAll();
+        jDPescritorio.repaint();
+        ConsultaPorNombre cPN = new ConsultaPorNombre();
+        cPN.setVisible(true);
+        jDPescritorio.add(cPN);
     }//GEN-LAST:event_jMconsultaActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
