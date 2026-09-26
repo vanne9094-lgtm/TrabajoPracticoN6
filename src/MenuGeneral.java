@@ -37,7 +37,7 @@ public class MenuGeneral extends javax.swing.JFrame {
         jMgestProduct = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMconsulta = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmiConsultaporprecio = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,11 +46,11 @@ public class MenuGeneral extends javax.swing.JFrame {
         jDPescritorio.setLayout(jDPescritorioLayout);
         jDPescritorioLayout.setHorizontalGroup(
             jDPescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 900, Short.MAX_VALUE)
         );
         jDPescritorioLayout.setVerticalGroup(
             jDPescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Administracion");
@@ -67,9 +67,9 @@ public class MenuGeneral extends javax.swing.JFrame {
         jMconsulta.addActionListener(this::jMconsultaActionPerformed);
         jMenu2.add(jMconsulta);
 
-        jMenuItem1.setText("Consulta por Precio");
-        jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
-        jMenu2.add(jMenuItem1);
+        jmiConsultaporprecio.setText("Consulta por Precio");
+        jmiConsultaporprecio.addActionListener(this::jmiConsultaporprecioActionPerformed);
+        jMenu2.add(jmiConsultaporprecio);
 
         jMenuItem2.setText("Consulta por Rubro");
         jMenu2.add(jMenuItem2);
@@ -100,9 +100,16 @@ public class MenuGeneral extends javax.swing.JFrame {
         jDPescritorio.add(cPN);
     }//GEN-LAST:event_jMconsultaActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jmiConsultaporprecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiConsultaporprecioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+        jDPescritorio.removeAll();
+        jDPescritorio.repaint();
+        ConsultaPorPrecio cpp = new ConsultaPorPrecio();
+        cpp.setVisible(true);
+        jDPescritorio.add(cpp);
+        cpp.moveToFront();
+        
+    }//GEN-LAST:event_jmiConsultaporprecioActionPerformed
 
     private void jMgestProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMgestProductActionPerformed
         jDPescritorio.removeAll();
@@ -144,8 +151,8 @@ public class MenuGeneral extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMgestProduct;
+    private javax.swing.JMenuItem jmiConsultaporprecio;
     // End of variables declaration//GEN-END:variables
 }
