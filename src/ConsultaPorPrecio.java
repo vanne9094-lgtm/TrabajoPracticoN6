@@ -149,6 +149,7 @@ public class ConsultaPorPrecio extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        borrarLista();
         try {
             Double preciomin = Double.parseDouble(jtfPreciomin.getText().trim());
             Double preciomax = Double.parseDouble(jtfPreciomax.getText().trim());
@@ -187,5 +188,13 @@ public class ConsultaPorPrecio extends javax.swing.JInternalFrame {
         modelo.addColumn("Stock");
         
         jtlistaPrecio.setModel(modelo);
+    }
+    private void borrarLista(){
+        
+        int filas = jtlistaPrecio.getRowCount()-1;
+        for ( int f = filas; f>=0; f--) {
+            modelo.removeRow(f);
+        }
+    
     }
 }
