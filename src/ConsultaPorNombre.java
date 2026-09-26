@@ -144,7 +144,7 @@ public class ConsultaPorNombre extends javax.swing.JInternalFrame {
         modelo.addColumn("Código");
         modelo.addColumn("Descripción");
         modelo.addColumn("Precio");
-        modelo.addColumn("Categoria");
+        modelo.addColumn("Rubro");
         modelo.addColumn("Stock");
         
         tableConsultaPorDescripcion.setModel(modelo);

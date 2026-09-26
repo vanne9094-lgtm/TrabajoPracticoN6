@@ -72,6 +72,7 @@ public class MenuGeneral extends javax.swing.JFrame {
         jMenu2.add(jmiConsultaporprecio);
 
         jMenuItem2.setText("Consulta por Rubro");
+        jMenuItem2.addActionListener(this::jMenuItem2ActionPerformed);
         jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
@@ -119,6 +120,14 @@ public class MenuGeneral extends javax.swing.JFrame {
         jDPescritorio.add(vp);
         jDPescritorio.moveToFront(vp);
     }//GEN-LAST:event_jMgestProductActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        jDPescritorio.removeAll();
+        jDPescritorio.repaint();
+        ConsultaPorRubro cPR = new ConsultaPorRubro();
+        cPR.setVisible(true);
+        jDPescritorio.add(cPR);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
